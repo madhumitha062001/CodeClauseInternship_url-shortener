@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+</head>
+<body style="background-color:
+MediumSeaGreen;">
+    <h1 >URL Shortener</h1>
+    <img src="https://i0.wp.com/www.thestartupfounder.com/wp-content/uploads/2022/10/Link-Shortener.jpg?fit=300%2C600&ssl=1" alt="Italian Trulli">
+    <p>Enter a URL to shorten:</p>
+    <input type="text" id="longUrl" placeholder="Enter URL" style="width: 300px;">
+    <button onclick="shortenUrl()">Shorten</button>
+    <p>Shortened URL:</p>
+    <p id="shortenedUrl"></p>
+
+    <script>
+        function shortenUrl() {
+            var longUrl = document.getElementById("longUrl").value;
+
+            // In a real-world application, you would send a request to a server to generate the shortened URL.
+            // For this example, we'll simply append a random string to the end of the current URL.
+            var randomString = Math.random().toString(36).substr(2, 7);
+            var shortenedUrl = window.location.origin + '/' + randomString;
+
+            document.getElementById("shortenedUrl").textContent = shortenedUrl;
+        }
+    </script>
+</body>
+</html>
